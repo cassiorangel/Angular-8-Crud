@@ -5,21 +5,19 @@
 
 
     <label for="inputEmail" class="sr-only">Endereço de e-mail </label>
-    <input type="email" 
-        formControlName="email" 
-        [ngClass]="aplicaCssError('email')"
-        class="form-control"
-        placeholder="Endereço de e-mail" 
-        autofocus>
+    <input type="email" formControlName="email" [ngClass]="aplicaCssError('email')" class="form-control"
+        placeholder="Endereço de e-mail" autofocus>
+    <span class="invalid-feedback email" *ngIf="verificaValidTouched('email')">
+        Informe email valido
+    </span>
 
 
     <label for="inputPassword" class="sr-only">Senha</label>
-    <input type="password" 
-        formControlName="senha" 
-        class="form-control" 
-        [ngClass]="aplicaCssError('senha')"
+    <input type="password" formControlName="senha" class="form-control" [ngClass]="aplicaCssError('senha')"
         placeholder="Senha">
-  
+    <span class="invalid-feedback email" *ngIf="verificaValidTouched('senha')">
+        Informe senha valido
+    </span>
     <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">assinar em</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
 </form>
