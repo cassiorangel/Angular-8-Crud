@@ -21,6 +21,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  aplicaCssError(campo) {
+    return {
+      'is-invalid': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo),
+    }
+  }
+
+  verificaValidTouched(campo) {
+    return !this.loginForm.get(campo).valid && this.loginForm.get(campo).touched; 
+  }
+
   onSubmit() {
     console.log(this.loginForm.value)
   }
