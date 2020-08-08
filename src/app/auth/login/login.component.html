@@ -18,6 +18,9 @@
     <span class="invalid-feedback email" *ngIf="verificaValidTouched('senha')">
         Informe senha valido
     </span>
+    <!--
+    <input type="text" placeholder="CPF" formControlName="cpf" class="form-control" mask="00000-000">
+    -->
     <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">assinar em</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
 </form>
